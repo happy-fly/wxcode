@@ -1,1 +1,32 @@
-hahahhahah
+<html>
+<head>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+    <script>
+
+        // 查询方法
+        function query() {
+            let data = {
+                "city": $("#city").val()
+            };
+            $.ajax({
+                "url": "/api/w?sign=123",
+                "type": "post",
+                "contentType": "application/json;charset=utf-8",
+                "dataType": "text",
+                "data": JSON.stringify(data),
+                "success": function (v) {
+                    $("#weather").html(v);
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+城市：<input type="text" id="city"></input>
+<button id="btn" onclick="query()">查询</button>
+
+<div id="weather"></div>
+</body>
+</html>

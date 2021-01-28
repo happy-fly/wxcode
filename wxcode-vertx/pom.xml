@@ -11,21 +11,28 @@
 
     <artifactId>wxcode-vertx</artifactId>
 
-<properties>
-    <vertx.version>4.0.0</vertx.version>
-</properties>
+    <properties>
+        <vertx.version>4.0.0</vertx.version>
+    </properties>
 
-<dependencies>
-    <dependency>
-        <groupId>io.vertx</groupId>
-        <artifactId>vertx-core</artifactId>
-        <version>${vertx.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>io.vertx</groupId>
-        <artifactId>vertx-web</artifactId>
-        <version>${vertx.version}</version>
-    </dependency>
-</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-web</artifactId>
+            <version>${vertx.version}</version>
+
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-web-client</artifactId>
+            <version>${vertx.version}</version>
+
+        </dependency>
+    </dependencies>
 
 </project>
