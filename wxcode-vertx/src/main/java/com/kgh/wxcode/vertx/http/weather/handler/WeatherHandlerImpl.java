@@ -13,30 +13,30 @@ import io.vertx.ext.web.RoutingContext;
  */
 public class WeatherHandlerImpl implements ApiSignHandler {
 
-    private WeatherService weatherService;
+  private WeatherService weatherService;
 
-    /**
-     * 此类仅在系统初始化的时候执行一次
-     */
-    public WeatherHandlerImpl(Vertx vertx) {
-        weatherService = new WeatherServiceImpl(vertx);
-        System.out.println("Weather Handle Init...");
-    }
+  /**
+   * 此类仅在系统初始化的时候执行一次
+   */
+  public WeatherHandlerImpl(Vertx vertx) {
+    weatherService = new WeatherServiceImpl(vertx);
+    System.out.println("Weather Handle Init...");
+  }
 
-    @Override
-    public void handle(RoutingContext context) {
-        System.out.println("Weather handle service");
+  @Override
+  public void handle(RoutingContext context) {
+    System.out.println("Weather handle service");
 
-        JsonObject data = context.getBodyAsJson();
-        weatherService.getWeather(data, r -> {
-            if (r.succeeded()) {
-                context.response()
-                        .putHeader("Content-Type", "application/json;charset=utf-8")
-                        .end(r.result().toString());
-            } else {
-                context.end("get weather err");
-            }
-        });
+    JsonObject data = context.getBodyAsJson();
+    weatherService.getWeather(data, r -> {
+      if (r.succeeded()) {
+        context.response()
+          .putHeader("Content-Type", "application/json;charset=utf-8")
+          .end(r.result().toString());
+      } else {
+        context.end("get weather err");
+      }
+    });
 
-    }
+  }
 }

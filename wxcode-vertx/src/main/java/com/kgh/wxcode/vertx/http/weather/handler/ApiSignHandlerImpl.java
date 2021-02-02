@@ -9,21 +9,21 @@ import io.vertx.ext.web.RoutingContext;
  */
 public class ApiSignHandlerImpl implements ApiSignHandler {
 
-    public ApiSignHandlerImpl() {
-        System.out.println("Api Sign Handle Init...");
-    }
+  public ApiSignHandlerImpl() {
+    System.out.println("Api Sign Handle Init...");
+  }
 
-    @Override
-    public void handle(RoutingContext context) {
+  @Override
+  public void handle(RoutingContext context) {
 
-        // 验证签名是否正确
-        String sign = context.request().getParam("sign");
-        if ("123".equals(sign)) {
-            // 验证通过，放行
-            context.next();
-        } else {
-            // 拦截
-            context.end("签名验证失败");
-        }
+    // 验证签名是否正确
+    String sign = context.request().getParam("sign");
+    if ("123".equals(sign)) {
+      // 验证通过，放行
+      context.next();
+    } else {
+      // 拦截
+      context.end("签名验证失败");
     }
+  }
 }
