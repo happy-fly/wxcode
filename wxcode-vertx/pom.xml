@@ -41,6 +41,16 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.13</version>
         </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-rx-java</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-redis-client</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
